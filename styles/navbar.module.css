@@ -1,40 +1,104 @@
-.navbar{
-    display: flex;
-
-}
-.navbarContent{
-    display: flex;
-    align-items: center;
-
-}
-.navLogo{
-    padding-top: 0;
-    padding-left: 2rem;
-    width: 20rem;
-    height: auto;
-}
-.navItems ul {
-    display: flex;
-    list-style: none;
-    text-decoration: none;
-    color: black;
-    align-items: center;
-
-
-}
-.navItems li{
-
-    justify-content: space-between;
-    margin-left:8rem;
-}
-.navItems li:last-child{
-    margin-right: 0;
+/* Navbar.module.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #C5EBAA;
+  position: fixed; /* Ensures navbar stays at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10; /* Ensure navbar stays above content */
+  transition: all 0.3s ease;
 }
 
-.navItems a{
-    text-decoration: none;
-    color: black;
+.navbarContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1024px; /* Limit container width for larger screens */
+  margin: 0 auto;
 }
-@media screen max-width (){
-    
+
+.navLogo {
+  height:4rem;
+  width: auto;
+  max-width: 100%; /* Make the logo image responsive */
+}
+
+.navItems {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navItems.active {
+  display: block; /* Show menu on mobile view */
+}
+
+.navItems li {
+  margin: 0 1rem;
+}
+
+.navItems a {
+  color: #333;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+
+.navItems li  :hover{
+  color:#2493D4;
+}
+.navItems:visited{
+  color: green;
+}
+
+/* Toggle Button */
+.menuToggle {
+  position: fixed;
+  display: none; /* Hide toggle button by default */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .navbarContent {
+    margin: 1rem;
+
+    flex-direction: column; /* Stack items vertically on mobile */
+    align-items: flex-start; /* Align items to the start */
+  }
+  .navItems li  :hover{
+    color:#2493D4;
+  }
+  .navItems:visited{
+    color: green;
+  }
+  
+  .navItems {
+    display: none; /* Hide navigation items by default */
+    width: 100%; /* Make navigation items full width */
+    background-color: #C5EBAA; /* Match navbar background */
+    padding: 1rem; /* Add padding for better look */
+    transition: all 0.3s ease; /* Smooth menu slide animation */
+  }
+
+  .navItems.active {
+    display: flex; /* Show menu when active */
+    flex-direction: column; /* Stack links vertically */
+    align-items: flex-start; /* Align links to the start */
+  }
+
+  .menuToggle {
+    display: block; /* Show toggle button on mobile */
+  }
+
+  .navLogo {
+    display: none; /* Hide logo by default on mobile */
+    margin-bottom: 1rem; /* Add space between logo and menu */
+  }
 }

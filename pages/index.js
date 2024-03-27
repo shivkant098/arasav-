@@ -12,9 +12,14 @@ function Home() {
     
 
   return (
-    <main className={styles.main}>
-      <Navbar/>
-          </main>
+    <>
+    <Navbar/>
+    <div className={styles.hero}>
+<div className={styles.heroImg}>
+  <img src="https://previews.123rf.com/images/milkos/milkos2002/milkos200205594/141394509-corporate-lifestyle-group-of-business-people-having-meeting-working-together-sitting-at-one-desk-in.jpg" alt='hero-img'/>
+</div>
+</div>
+      </>
   )
 }
 
