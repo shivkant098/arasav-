@@ -1,0 +1,40 @@
+.navbar{
+    display: flex;
+
+}
+.navbarContent{
+    display: flex;
+    align-items: center;
+
+}
+.navLogo{
+    padding-top: 0;
+    padding-left: 2rem;
+    width: 20rem;
+    height: auto;
+}
+.navItems ul {
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    align-items: center;
+
+
+}
+.navItems li{
+
+    justify-content: space-between;
+    margin-left:8rem;
+}
+.navItems li:last-child{
+    margin-right: 0;
+}
+
+.navItems a{
+    text-decoration: none;
+    color: black;
+}
+@media screen max-width (){
+    
+}
